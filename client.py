@@ -3,10 +3,13 @@ from base64 import b64encode
 from json import loads
 from json import dumps
 
+import os
+
+
 class RestClient:
     def __init__(self, sandbox):
         self.username = "william@sentivio.com"
-        self.password = "54bbce59daad4c15"
+        self.password = os.environ['API_KEY']
         if sandbox:
             self.domain =  "sandbox.dataforseo.com"
         else:
